@@ -1,13 +1,13 @@
-NAME=ms
+NAME=main
 TARGET=$(NAME).pdf
 SOURCE=$(NAME).tex
 AUX=$(NAME).aux
 
-#FIGS=$(wildcard fig/*.pdf)
+FIGS=$(wildcard Figures/*.pdf Figures/*png)
 #BIBS=$(shell find bibliography/ -name \*.bib)
 #PLTS=$(shell find fig -name \*.py -perm +111)
 
-JUNK=.aux .bbl .blg .dvi .log .nav .out .ps .snm .tex.backup .toc Notes.bib
+JUNK=.aux .bbl .blg .bib .dvi .log .nav .out .toc .brf .fls .fdb_latexmk
 
 all: $(TARGET)
 
@@ -19,10 +19,15 @@ $(TARGET): $(SOURCE) $(FIGS) .FORCE
 
 bib: $(SOURCE) $(FIGS) $(BIBS) .FORCE
 	@pdflatex $(SOURCE)
-	@bibtool -x $(AUX) -i $(PTOOLSDIR)/masterDB.bib -o $(NAME).bib
+	@bibtool -r $(PTOOLSDIR)/bibtoolrsc \
+		 -f "%-3.1n(author)%4d(year)" \
+                 -i $(PTOOLSDIR)/mainDB.bib \
+		 -x $(AUX) \
+                 -o $(NAME).bib
 	@bibtex $(NAME)
 	@pdflatex $(SOURCE)
 	@pdflatex $(SOURCE)
+	@sed -i 's/{1979/{r1979/g' $(NAME).bib # Hack to fix `van Riper` entry
 
 clean:
 	@for ext in $(JUNK); do\
