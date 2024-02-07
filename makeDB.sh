@@ -2,7 +2,7 @@
 
 # Combine bib1.bib and bib2.bib into newbib.bib
 # and comment out duplicates
-#bibtool -s -d meth.bib sasi.bib -o newbib.bib
+#bibtool -s -d bib1.bib bib2.bib -o newbib.bib
 
 bibtool -r ${PTOOLSDIR}/bibtoolrsc \
         -i ${PTOOLSDIR}/mainDB.bib \
