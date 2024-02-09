@@ -7,7 +7,7 @@ FIGS=$(wildcard Figures/*.pdf Figures/*png)
 #BIBS=$(shell find bibliography/ -name \*.bib)
 #PLTS=$(shell find fig -name \*.py -perm +111)
 
-JUNK=.aux .bbl .blg .bib .dvi .log .nav .out .toc .brf .fls .fdb_latexmk
+JUNK=.aux .bbl .blg .bib .dvi .log .nav .out .toc .brf .fls .fdb_latexmk .lot .lof .nlo synctex*
 
 all: $(TARGET)
 
@@ -28,6 +28,7 @@ bib: $(SOURCE) $(FIGS) $(BIBS) .FORCE
 	@pdflatex $(SOURCE)
 	@pdflatex $(SOURCE)
 	@sed -i 's/{1979/{r1979/g' $(NAME).bib # Hack to fix `van Riper` entry
+	@sed -i 's/{a-d-tab2021/{amrex2021/g' $(NAME).bib # Hack to fix `amrex` entry
 
 clean:
 	@for ext in $(JUNK); do\
