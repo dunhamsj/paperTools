@@ -5,7 +5,7 @@
 #bibtool -s -d bib1.bib bib2.bib -o newbib.bib
 
 bibtool -r ${PTOOLSDIR}/bibtoolrsc \
-        -i ${PTOOLSDIR}/mainDB.bib \
+        -i ${PTOOLSDIR}/main.bib \
         -f "%-3.1n(author)%4d(year)" \
-        -o main.bib
+        -o mainDB.bib
 sed -i 's/{1979/{r1979/g' main.bib # hack to fix van Riper entry
