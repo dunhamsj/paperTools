@@ -7,7 +7,7 @@ FIGS=$(wildcard Figures/*.pdf Figures/*png)
 #BIBS=$(shell find bibliography/ -name \*.bib)
 #PLTS=$(shell find fig -name \*.py -perm +111)
 
-JUNK=.aux .bbl .blg .bib .dvi .log .nav .out .toc .brf .fls .fdb_latexmk .lot .lof .nlo synctex*
+JUNK=.aux .bbl .blg .bib .dvi .log .nav .out .toc .brf .fls .fdb_latexmk .lot .lof .nlo .synctex*
 
 all: $(TARGET)
 
