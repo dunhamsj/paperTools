@@ -16,6 +16,8 @@ $(TARGET): $(SOURCE) $(FIGS) .FORCE
 	@bibtex $(NAME)
 	@pdflatex $(SOURCE)
 	@pdflatex $(SOURCE)
+	@sed -i 's/{1979/{r1979/g' $(NAME).bib # Hack to fix `van Riper` entry
+	@sed -i 's/{a-d-tab2021/{amrex2021/g' $(NAME).bib # Hack to fix `amrex` entry
 
 bib: $(SOURCE) $(FIGS) $(BIBS) .FORCE
 	@pdflatex $(SOURCE)
