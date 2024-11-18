@@ -19,3 +19,4 @@ print.line.length = 9999
 print.wide.equal  = on
 print.equal.right = off
 print.use.tab     = off
+fmt.et.al = ""

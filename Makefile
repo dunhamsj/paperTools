@@ -19,7 +19,7 @@ $(TARGET): $(SOURCE) $(FIGS) .FORCE
 
 bib: $(SOURCE) $(FIGS) $(BIBS) .FORCE
 	@pdflatex $(SOURCE)
-	@bibtool -x $(AUX) -i $(PTOOLSDIR)/masterDB.bib -o $(NAME).bib
+	@bibtool -x $(AUX) -i $(PTOOLSDIR)/mainDB.bib -o $(NAME).bib
 	@bibtex $(NAME)
 	@pdflatex $(SOURCE)
 	@pdflatex $(SOURCE)
