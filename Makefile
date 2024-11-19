@@ -1,24 +1,21 @@
-NAME=ms
+NAME=main
 TARGET=$(NAME).pdf
 SOURCE=$(NAME).tex
 AUX=$(NAME).aux
 
-#FIGS=$(wildcard fig/*.pdf)
-#BIBS=$(shell find bibliography/ -name \*.bib)
-#PLTS=$(shell find fig -name \*.py -perm +111)
-
-JUNK=.aux .bbl .blg .dvi .log .nav .out .ps .snm .tex.backup .toc Notes.bib
+JUNK=.aux .bbl .blg .log .brf .out
 
 all: $(TARGET)
 
-$(TARGET): $(SOURCE) $(FIGS) .FORCE
+$(TARGET): $(SOURCE) .FORCE
 	@pdflatex $(SOURCE)
 	@bibtex $(NAME)
 	@pdflatex $(SOURCE)
 	@pdflatex $(SOURCE)
 
-bib: $(SOURCE) $(FIGS) $(BIBS) .FORCE
+bib: $(SOURCE) $(BIBS) .FORCE
 	@pdflatex $(SOURCE)
+	@rm -f $(NAME).bib
 	@bibtool -x $(AUX) -i $(PTOOLSDIR)/mainDB.bib -o $(NAME).bib
 	@bibtex $(NAME)
 	@pdflatex $(SOURCE)
