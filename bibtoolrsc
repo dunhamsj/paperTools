@@ -20,3 +20,4 @@ print.wide.equal  = on
 print.equal.right = off
 print.use.tab     = off
 fmt.et.al = ""
+fmt.name.name = ""
