@@ -3,7 +3,7 @@ TARGET=$(NAME).pdf
 SOURCE=$(NAME).tex
 AUX=$(NAME).aux
 
-JUNK=.aux .bbl .blg .log .brf .out
+JUNK=.aux .bbl .blg .log .brf .out .snm .nav .toc
 
 all: $(TARGET)
 
