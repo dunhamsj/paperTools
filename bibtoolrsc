@@ -16,7 +16,7 @@ preserve.key.case = off
 
 print.align.key   = 0
 print.indent      = 2
-print.align       = 0
+print.align       = 12
 print.line.length = 80
 print.wide.equal  = on
 print.equal.right = on
