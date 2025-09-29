@@ -10,6 +10,7 @@ bibtool -r ${PTOOLSDIR}/bibtoolrsc \
         -o mainDB.bib
 
 sed -i 's/{1979/{vanriper1979/g' mainDB.bib
+sed -i 's/{mart2003/{marti2003/g' mainDB.bib
 
 #bibtool -r ${PTOOLSDIR}/bibtoolrsc \
 #        -i ${PTOOLSDIR}/main.bib \
