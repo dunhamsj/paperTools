@@ -12,17 +12,16 @@ delete.field = "bdsk-url-1"
 delete.field = "bdsk-url-2"
 delete.field = "bdsk-url-3"
 
-preserve.key.case = off
+# Replace "*1", "*2" with "a", "b" for multiple papers by same first author
+key.number.separator = ""
+key.base = "lower"
 
-print.align.key   = 0
-print.indent      = 2
-print.align       = 12
-print.line.length = 80
-print.wide.equal  = on
-print.equal.right = on
-print.use.tab     = off
+print.align.key   = 0 # remove white space before key name
+print.line.length = 80 # max length of single line
+print.wide.equal  = on # force spaces around equals signs
+print.use.tab     = off # don't use tabs
 
-suppress.initial.newline = on
+suppress.initial.newline = on # don't put newline at beginning of file
 
 sort        = on
 sort.format = "%d(year)"
