@@ -16,7 +16,10 @@ $(TARGET): $(SOURCE) .FORCE
 bib: $(SOURCE) $(BIBS) .FORCE
 	@pdflatex $(SOURCE)
 	@rm -f $(NAME).bib
-	@bibtool -x $(AUX) -i $(PTOOLSDIR)/mainDB.bib -o $(NAME).bib
+	@bibtool -r $(PTOOLSDIR)/bibtoolrsc \
+		 -x $(AUX) \
+		 -i $(PTOOLSDIR)/mainDB.bib \
+		 -o $(NAME).bib
 	@bibtex $(NAME)
 	@pdflatex $(SOURCE)
 	@pdflatex $(SOURCE)
