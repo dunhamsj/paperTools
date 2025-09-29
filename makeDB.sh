@@ -9,8 +9,9 @@ bibtool -r ${PTOOLSDIR}/bibtoolrsc \
         -f "%-1n(author)%4d(year)" \
         -o mainDB.bib
 
-sed -i 's/{1979/{vanriper1979/g' mainDB.bib
-sed -i 's/{mart2003/{marti2003/g' mainDB.bib
+sed -i ".bak" 's/{1979/{vanriper1979/g' mainDB.bib
+sed -i ".bak" 's/{mart2003/{marti2003/g' mainDB.bib
+rm -f mainDB.bib.bak
 
 #bibtool -r ${PTOOLSDIR}/bibtoolrsc \
 #        -i ${PTOOLSDIR}/main.bib \
